@@ -27,3 +27,8 @@ size_t Cimage::how_many_bytes(size_t width, size_t height)
 {
     return 4 * width * height;
 }
+
+std::string Cimage::type()
+{
+    return "Cimage (C++)";
+}
