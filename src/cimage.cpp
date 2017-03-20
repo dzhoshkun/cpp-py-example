@@ -1,9 +1,8 @@
 #include "cimage.h"
 
 
-Cimage::Cimage(unsigned char * data, size_t width, size_t height)
-    : _data(data)
-    , _width(width)
+Cimage::Cimage(size_t width, size_t height)
+    : _width(width)
     , _height(height)
 {
 
@@ -11,13 +10,7 @@ Cimage::Cimage(unsigned char * data, size_t width, size_t height)
 
 Cimage::~Cimage()
 {
-    if (_data != nullptr)
-        delete [] _data;
-}
 
-unsigned char * const Cimage::data()
-{
-    return _data;
 }
 
 size_t Cimage::width()
