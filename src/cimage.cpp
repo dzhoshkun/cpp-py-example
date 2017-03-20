@@ -28,7 +28,7 @@ size_t Cimage::how_many_bytes(size_t width, size_t height)
     return 4 * width * height;
 }
 
-std::string Cimage::type()
+void Cimage::info()
 {
-    return "Cimage (C++)";
+    printf("Cimage (C++): %lux%lu\n", _width, _height);
 }
