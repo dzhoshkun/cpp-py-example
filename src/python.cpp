@@ -1,5 +1,6 @@
 #include <boost/python.hpp>
 #include "cimage.h"
+#include "cproc.h"
 
 
 using namespace boost::python;
@@ -28,6 +29,18 @@ public:
 };
 
 
+class CprocWrapper
+    : public Cproc
+    , public wrapper<Cproc>
+{
+public:
+    void run(Cimage & image)
+    {
+        Cproc::run(boost::ref(image));
+    }
+};
+
+
 BOOST_PYTHON_MODULE(pymycpp)
 {
     class_<CimageWrapper, boost::noncopyable>(
@@ -37,5 +50,10 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("how_many_bytes", &CimageWrapper::how_many_bytes)
         .staticmethod("how_many_bytes")
         .def("info", &CimageWrapper::info)
+        ;
+
+    class_<CprocWrapper, boost::noncopyable>(
+            "Cproc", init<>())
+        .def("run", &CprocWrapper::run)
         ;
 }
