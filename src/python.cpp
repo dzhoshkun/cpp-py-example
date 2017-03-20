@@ -29,18 +29,6 @@ public:
 };
 
 
-class CprocWrapper
-    : public Cproc
-    , public wrapper<Cproc>
-{
-public:
-    void run(Cimage & image)
-    {
-        Cproc::run(boost::ref(image));
-    }
-};
-
-
 BOOST_PYTHON_MODULE(pymycpp)
 {
     class_<CimageWrapper, boost::noncopyable>(
@@ -52,8 +40,8 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("info", &CimageWrapper::info)
         ;
 
-    class_<CprocWrapper, boost::noncopyable>(
+    class_<Cproc, boost::noncopyable>(
             "Cproc", init<>())
-        .def("run", &CprocWrapper::run)
+        .def("run", &Cproc::run)
         ;
 }
