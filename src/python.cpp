@@ -5,12 +5,37 @@
 using namespace boost::python;
 
 
+class CimageWrapper
+    : public Cimage
+    , public wrapper<Cimage>
+{
+public:
+    CimageWrapper(size_t width, size_t height)
+        : Cimage(width, height)
+    {
+
+    }
+
+public:
+    void info()
+    {
+        override f = this->get_override("info");
+        if (f)
+            f();
+        else
+            Cimage::info();
+    }
+};
+
+
 BOOST_PYTHON_MODULE(pymycpp)
 {
-    class_<Cimage>("Cimage", init<size_t, size_t>())
-        .def("width", &Cimage::width)
-        .def("height", &Cimage::height)
-        .def("how_many_bytes", &Cimage::how_many_bytes)
+    class_<CimageWrapper, boost::noncopyable>(
+            "Cimage", init<size_t, size_t>())
+        .def("width", &CimageWrapper::width)
+        .def("height", &CimageWrapper::height)
+        .def("how_many_bytes", &CimageWrapper::how_many_bytes)
         .staticmethod("how_many_bytes")
+        .def("info", &CimageWrapper::info)
         ;
 }
