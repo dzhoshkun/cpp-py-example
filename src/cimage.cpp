@@ -22,3 +22,8 @@ size_t Cimage::height()
 {
     return _height;
 }
+
+size_t Cimage::how_many_bytes(size_t width, size_t height)
+{
+    return 4 * width * height;
+}
