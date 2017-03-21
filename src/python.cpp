@@ -43,5 +43,6 @@ BOOST_PYTHON_MODULE(pymycpp)
     class_<Cproc, boost::noncopyable>(
             "Cproc", init<>())
         .def("run", &Cproc::run)
+        .def("stop", &Cproc::stop)
         ;
 }
