@@ -18,7 +18,9 @@ endif()
 list(REMOVE_DUPLICATES CMAKE_CXX_FLAGS)
 
 set(CPP_LIB mycpp)
-add_library(${CPP_LIB} SHARED cimage.h cimage.cpp)
+add_library(${CPP_LIB} SHARED cimage.h cimage.cpp
+                              cproc.h cproc.cpp
+                              gil.h)
 
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})

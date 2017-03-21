@@ -1,5 +1,7 @@
 #include <boost/python.hpp>
 #include "cimage.h"
+#include "cproc.h"
+#include "gil.h"
 
 
 using namespace boost::python;
@@ -19,6 +21,7 @@ public:
 public:
     void info()
     {
+        ScopedPythonGILLock gil_lock;
         override f = this->get_override("info");
         if (f)
             f();
@@ -30,6 +33,8 @@ public:
 
 BOOST_PYTHON_MODULE(pymycpp)
 {
+    PyEval_InitThreads();
+
     class_<CimageWrapper, boost::noncopyable>(
             "Cimage", init<size_t, size_t>())
         .def("width", &CimageWrapper::width)
@@ -37,5 +42,11 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("how_many_bytes", &CimageWrapper::how_many_bytes)
         .staticmethod("how_many_bytes")
         .def("info", &CimageWrapper::info)
+        ;
+
+    class_<Cproc, boost::noncopyable>(
+            "Cproc", init<>())
+        .def("run", &Cproc::run)
+        .def("stop", &Cproc::stop)
         ;
 }
