@@ -22,7 +22,8 @@ void Cproc::run(Cimage & image)
 void Cproc::stop()
 {
     _running = false;
-    _thread.join();
+    if (_thread.joinable())
+        _thread.join();
 }
 
 void Cproc::mt_run(Cimage & image)
