@@ -31,6 +31,7 @@ void Cproc::mt_run(Cimage & image)
     while (_running)
     {
         printf("%lu. iteration: ", ++count);
+        fflush(stdout);
         image.info();
         std::this_thread::sleep_for(
                 std::chrono::milliseconds(500));
