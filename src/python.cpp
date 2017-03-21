@@ -1,6 +1,7 @@
 #include <boost/python.hpp>
 #include "cimage.h"
 #include "cproc.h"
+#include "gil.h"
 
 
 using namespace boost::python;
@@ -20,6 +21,7 @@ public:
 public:
     void info()
     {
+        ScopedPythonGILLock gil_lock;
         override f = this->get_override("info");
         if (f)
             f();
