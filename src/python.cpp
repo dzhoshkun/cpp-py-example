@@ -31,6 +31,8 @@ public:
 
 BOOST_PYTHON_MODULE(pymycpp)
 {
+    PyEval_InitThreads();
+
     class_<CimageWrapper, boost::noncopyable>(
             "Cimage", init<size_t, size_t>())
         .def("width", &CimageWrapper::width)
