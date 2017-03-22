@@ -25,5 +25,16 @@ Cimage * File::read(std::string filepath)
 
 void File::write(const Cimage & image, std::string filepath)
 {
-    // TODO
+    FILE * fptr = fopen(filepath.c_str(), "wb");
+    if (fptr == nullptr)
+        throw FileNotFound();
+
+    *(int *)&bmp_header[18] = (int) image.width();
+    *(int *)&bmp_header[22] = (int) image.height();
+    fwrite(bmp_header, sizeof(unsigned char), 54, fptr);
+
+    size_t num_bytes = 3 * image.width() * image.height();
+    fwrite(image.data(), sizeof(unsigned char), num_bytes, fptr);
+
+    fclose(fptr);
 }
