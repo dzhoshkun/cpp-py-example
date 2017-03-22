@@ -17,9 +17,9 @@ public:
     virtual ~Cimage();
 
 public:
-    unsigned char * const data();
-    size_t width();
-    size_t height();
+    unsigned char * const data() const;
+    size_t width() const;
+    size_t height() const;
     static size_t how_many_bytes(size_t width, size_t height);
     virtual void info();
 };

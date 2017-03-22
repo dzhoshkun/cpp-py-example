@@ -22,17 +22,17 @@ Cimage::~Cimage()
         delete [] _data;
 }
 
-unsigned char * const Cimage::data()
+unsigned char * const Cimage::data() const
 {
     return _data;
 }
 
-size_t Cimage::width()
+size_t Cimage::width() const
 {
     return _width;
 }
 
-size_t Cimage::height()
+size_t Cimage::height() const
 {
     return _height;
 }
