@@ -7,6 +7,7 @@
 class Cimage
 {
 protected:
+    unsigned char * _data;
     size_t _width;
     size_t _height;
 
@@ -15,6 +16,7 @@ public:
     virtual ~Cimage();
 
 public:
+    unsigned char * const data();
     size_t width();
     size_t height();
     static size_t how_many_bytes(size_t width, size_t height);

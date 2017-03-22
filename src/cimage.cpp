@@ -13,6 +13,11 @@ Cimage::~Cimage()
 
 }
 
+unsigned char * const Cimage::data()
+{
+    return _data;
+}
+
 size_t Cimage::width()
 {
     return _width;
