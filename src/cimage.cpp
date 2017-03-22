@@ -8,9 +8,18 @@ Cimage::Cimage(size_t width, size_t height)
 
 }
 
-Cimage::~Cimage()
+Cimage::Cimage(unsigned char * data, size_t width, size_t height)
+    : _data(data)
+    , _width(width)
+    , _height(height)
 {
 
+}
+
+Cimage::~Cimage()
+{
+    if (_data != nullptr)
+        delete [] _data;
 }
 
 unsigned char * const Cimage::data()

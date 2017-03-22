@@ -13,6 +13,7 @@ protected:
 
 public:
     Cimage(size_t width, size_t height);
+    Cimage(unsigned char * data, size_t width, size_t height);
     virtual ~Cimage();
 
 public:
