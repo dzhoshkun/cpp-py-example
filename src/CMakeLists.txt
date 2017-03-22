@@ -21,6 +21,7 @@ set(CPP_LIB mycpp)
 add_library(${CPP_LIB} SHARED cimage.h cimage.cpp
                               cproc.h cproc.cpp
                               file.h file.cpp
+                              except.h except.cpp
                               gil.h)
 
 find_package(PythonLibs REQUIRED)
