@@ -26,7 +26,9 @@ Bitmap::Bitmap(std::string filepath)
 
 Bitmap::~Bitmap()
 {
-    // TODO
+    save();
+    if (_data != nullptr)
+        delete [] _data;
 }
 
 uint8_t * const Bitmap::get_data() const
