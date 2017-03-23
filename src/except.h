@@ -2,9 +2,9 @@
 #include <stdexcept>
 
 
-class FileNotFound : public std::exception
+class FileError : public std::exception
 {
 public:
-    FileNotFound();
-    virtual ~FileNotFound() noexcept;
+    FileError();
+    virtual ~FileError() noexcept;
 };
