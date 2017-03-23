@@ -7,6 +7,7 @@
 class Bitmap
 {
     protected:
+        std::string _filepath;
         uint8_t * _data;
         size_t _width;
         size_t _height;
