@@ -4,6 +4,7 @@
 #include "cproc.h"
 #include "gil.h"
 #include "except.h"
+#include "bitmap.h"
 
 
 using namespace boost::python;
@@ -44,6 +45,7 @@ BOOST_PYTHON_MODULE(pymycpp)
     PyEval_InitThreads();
 
     register_exception_translator<FileError>(&translate_FileError);
+
     class_<CimageWrapper, boost::noncopyable>(
             "Cimage", init<size_t, size_t>())
         .def("width", &CimageWrapper::width)
@@ -57,5 +59,12 @@ BOOST_PYTHON_MODULE(pymycpp)
             "Cproc", init<>())
         .def("run", &Cproc::run)
         .def("stop", &Cproc::stop)
+        ;
+
+    class_<Bitmap, boost::noncopyable>(
+            "Bitmap", init<std::string>())
+        .def("get_width", &Bitmap::get_width)
+        .def("get_height", &Bitmap::get_height)
+        .def("save", &Bitmap::save)
         ;
 }
