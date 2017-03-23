@@ -1,8 +1,24 @@
 #include "bitmap.h"
 #include "except.h"
+#include <ctime>
 
 
-std::string timestamp(std::string filepath);
+std::string timestamp(std::string filepath)
+{
+    std::time_t now = std::time(0);
+    std::tm * ltm = std::localtime(&now);
+    char ts[50];
+    sprintf(ts, "-%d-%02d-%02d-%02d-%02d-%02d",
+            1900 + ltm->tm_year,
+            1 + ltm->tm_mon,
+            ltm->tm_mday,
+            1 + ltm->tm_hour,
+            1 + ltm->tm_min,
+            1 + ltm->tm_sec);
+    size_t pos = filepath.find(".bmp");
+    std::string filepath_ts = filepath.insert(pos, ts);
+    return filepath_ts;
+}
 
 Bitmap::Bitmap(std::string filepath)
     : _filepath(filepath)
@@ -78,10 +94,4 @@ std::string Bitmap::save() const
     fclose(fptr);
 
     return filepath_ts;
-}
-
-std::string timestamp(std::string filepath)
-{
-    // TODO
-    return "";
 }
