@@ -1,13 +1,13 @@
 #include "except.h"
 
 
-FileNotFound::FileNotFound()
+FileError::FileError()
     : std::exception()
 {
 
 }
 
-FileNotFound::~FileNotFound() noexcept
+FileError::~FileError() noexcept
 {
 
 }

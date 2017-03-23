@@ -1,7 +1,9 @@
 #include <boost/python.hpp>
+#include <boost/python/exception_translator.hpp>
 #include "cimage.h"
 #include "cproc.h"
 #include "gil.h"
+#include "except.h"
 
 
 using namespace boost::python;
@@ -31,10 +33,17 @@ public:
 };
 
 
+void translate_FileError(FileError const & e)
+{
+    PyErr_SetString(PyExc_OSError, "FileError");
+}
+
+
 BOOST_PYTHON_MODULE(pymycpp)
 {
     PyEval_InitThreads();
 
+    register_exception_translator<FileError>(&translate_FileError);
     class_<CimageWrapper, boost::noncopyable>(
             "Cimage", init<size_t, size_t>())
         .def("width", &CimageWrapper::width)

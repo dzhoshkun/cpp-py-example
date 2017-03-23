@@ -6,7 +6,7 @@ Cimage * File::read(std::string filepath)
 {
     FILE * fptr = fopen(filepath.c_str(), "rb");
     if (fptr == nullptr)
-        throw FileNotFound();
+        throw FileError();
 
     unsigned char bmp_header[54];
     fread(bmp_header, sizeof(unsigned char), 54, fptr);
@@ -26,7 +26,7 @@ void File::write(const Cimage & image, std::string filepath)
 {
     FILE * fptr = fopen(filepath.c_str(), "wb");
     if (fptr == nullptr)
-        throw FileNotFound();
+        throw FileError();
 
     unsigned char bmp_header[54] = {'B','M',
                                     0, 0, 0, 0,
