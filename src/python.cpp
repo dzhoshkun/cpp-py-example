@@ -4,6 +4,7 @@
 #include "cproc.h"
 #include "gil.h"
 #include "except.h"
+#include "file.h"
 
 
 using namespace boost::python;
@@ -57,5 +58,13 @@ BOOST_PYTHON_MODULE(pymycpp)
             "Cproc", init<>())
         .def("run", &Cproc::run)
         .def("stop", &Cproc::stop)
+        ;
+
+    class_<File>("File", no_init)
+        .def("read", &File::read,
+             return_value_policy<reference_existing_object>())
+        .staticmethod("read")
+        .def("write", &File::write)
+        .staticmethod("write")
         ;
 }
