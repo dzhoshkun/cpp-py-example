@@ -33,20 +33,17 @@ Bitmap::~Bitmap()
 
 uint8_t * const Bitmap::get_data() const
 {
-    // TODO
-    return nullptr;
+    return _data;
 }
 
 size_t Bitmap::get_width() const
 {
-    // TODO
-    return 0;
+    return _width;
 }
 
 size_t Bitmap::get_height() const
 {
-    // TODO
-    return 0;
+    return _height;
 }
 
 std::string Bitmap::save() const
