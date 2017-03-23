@@ -1,5 +1,6 @@
 #include <boost/python.hpp>
 #include <boost/python/exception_translator.hpp>
+#include <boost/python/numpy.hpp>
 #include "cimage.h"
 #include "cproc.h"
 #include "gil.h"
@@ -31,6 +32,18 @@ public:
         else
             Cimage::info();
     }
+
+    numpy::ndarray data_as_ndarray() const
+    {
+        tuple shape, strides;
+        numpy::dtype data_type = numpy::dtype::get_builtin<uint8_t>();
+        shape = make_tuple(this->height(), this->width(), 3);
+        strides = make_tuple(this->width() * 3 * sizeof(uint8_t),
+                             3 * sizeof(uint8_t),
+                             sizeof(uint8_t));
+        return numpy::from_data(this->data(), data_type, shape, strides,
+                                object());
+    }
 };
 
 
@@ -52,6 +65,7 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("how_many_bytes", &CimageWrapper::how_many_bytes)
         .staticmethod("how_many_bytes")
         .def("info", &CimageWrapper::info)
+        .def("data", &CimageWrapper::data_as_ndarray)
         ;
 
     class_<Cproc, boost::noncopyable>(
