@@ -16,5 +16,5 @@ public:
     void start(Cimage & image);
     void stop();
 protected:
-    void mt_run(Cimage & image);
+    void run(Cimage & image);
 };

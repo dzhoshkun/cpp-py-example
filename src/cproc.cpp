@@ -16,7 +16,7 @@ Cproc::~Cproc()
 void Cproc::start(Cimage & image)
 {
     _running = true;
-    _thread = std::thread(&Cproc::mt_run, this, std::ref(image));
+    _thread = std::thread(&Cproc::run, this, std::ref(image));
 }
 
 void Cproc::stop()
@@ -26,7 +26,7 @@ void Cproc::stop()
         _thread.join();
 }
 
-void Cproc::mt_run(Cimage & image)
+void Cproc::run(Cimage & image)
 {
     size_t count = 0;
     while (_running)
