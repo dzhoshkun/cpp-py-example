@@ -22,6 +22,7 @@ class Bitmap
         size_t get_width() const;
         size_t get_height() const;
         std::string save();
+        virtual std::string info() const;
 
     protected:
         std::string timestamp(std::string filepath);

@@ -37,6 +37,14 @@ class BitmapWrapper : public Bitmap
                                     strides,
                                     object());
         }
+
+        std::string info() const
+        {
+            if (override f = this->get_override("info"))
+                return f();
+            else
+                return Bitmap::info();
+        }
 };
 
 class CimageWrapper
@@ -98,5 +106,6 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("get_height", &BitmapWrapper::get_height)
         .def("save", &BitmapWrapper::save)
         .def("data", &BitmapWrapper::data_as_ndarray)
+        .def("info", &BitmapWrapper::info)
         ;
 }
