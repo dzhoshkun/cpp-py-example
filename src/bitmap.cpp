@@ -80,6 +80,14 @@ std::string Bitmap::save()
     return filepath_ts;
 }
 
+std::string Bitmap::info() const
+{
+    char _info[100];
+    sprintf(_info, "C++ | Bitmap | %lu x %lu | %s",
+            _width, _height, _filepath.c_str());
+    return std::string(_info);
+}
+
 std::string Bitmap::timestamp(std::string filepath)
 {
     std::time_t now = std::time(0);
