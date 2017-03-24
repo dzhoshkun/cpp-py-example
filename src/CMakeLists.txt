@@ -28,7 +28,7 @@ add_library(${CPP_LIB} SHARED cimage.h cimage.cpp
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 
-find_package(Boost COMPONENTS python REQUIRED)
+find_package(Boost COMPONENTS python numpy REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
 set(PY_LIB py${CPP_LIB})
