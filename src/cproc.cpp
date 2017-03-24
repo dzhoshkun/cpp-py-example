@@ -13,7 +13,7 @@ Cproc::~Cproc()
     stop();
 }
 
-void Cproc::start(Cimage & image)
+void Cproc::start(Bitmap & image)
 {
     _running = true;
     _thread = std::thread(&Cproc::run, this, std::ref(image));
@@ -26,7 +26,7 @@ void Cproc::stop()
         _thread.join();
 }
 
-void Cproc::run(Cimage & image)
+void Cproc::run(Bitmap & image)
 {
     size_t count = 0;
     while (_running)
