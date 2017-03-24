@@ -10,6 +10,17 @@
 using namespace boost::python;
 
 
+class BitmapWrapper : public Bitmap
+                      , public wrapper<Bitmap>
+{
+    public:
+        BitmapWrapper(std::string filepath)
+            : Bitmap(filepath)
+        {
+            // nop
+        }
+};
+
 class CimageWrapper
     : public Cimage
     , public wrapper<Cimage>
@@ -61,10 +72,10 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("stop", &Cproc::stop)
         ;
 
-    class_<Bitmap, boost::noncopyable>(
+    class_<BitmapWrapper, boost::noncopyable>(
             "Bitmap", init<std::string>())
-        .def("get_width", &Bitmap::get_width)
-        .def("get_height", &Bitmap::get_height)
-        .def("save", &Bitmap::save)
+        .def("get_width", &BitmapWrapper::get_width)
+        .def("get_height", &BitmapWrapper::get_height)
+        .def("save", &BitmapWrapper::save)
         ;
 }
