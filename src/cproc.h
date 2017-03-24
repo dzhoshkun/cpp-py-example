@@ -13,7 +13,7 @@ public:
     Cproc();
     ~Cproc();
 public:
-    void run(Cimage & image);
+    void start(Cimage & image);
     void stop();
 protected:
     void mt_run(Cimage & image);

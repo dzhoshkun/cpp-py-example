@@ -13,7 +13,7 @@ Cproc::~Cproc()
     stop();
 }
 
-void Cproc::run(Cimage & image)
+void Cproc::start(Cimage & image)
 {
     _running = true;
     _thread = std::thread(&Cproc::mt_run, this, std::ref(image));
