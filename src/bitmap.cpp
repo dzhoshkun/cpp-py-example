@@ -95,6 +95,12 @@ std::string Bitmap::info() const
 }
 
 
+uint8_t * const Bitmap::get_memory(size_t width, size_t height)
+{
+    return new uint8_t[3 * width * height];
+}
+
+
 std::string Bitmap::timestamp(std::string filepath)
 {
     std::time_t now = std::time(0);
