@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from pymycpp import Bitmap
 import scipy.ndimage as ndi
 

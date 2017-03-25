@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from pymycpp import Bitmap, Proc
 from over import PyBitmap
 from time import sleep
