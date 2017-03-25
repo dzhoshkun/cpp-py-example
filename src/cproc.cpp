@@ -1,4 +1,5 @@
 #include <chrono>
+#include <iostream>
 #include "cproc.h"
 
 
@@ -29,11 +30,11 @@ void Cproc::stop()
 void Cproc::run(Bitmap & image)
 {
     size_t count = 0;
+
     while (_running)
     {
-        printf("%lu. iteration: ", ++count);
-        fflush(stdout);
-        image.info();
+        std::cout << ++count << ". iteration: "
+                  << image.info() << std::endl;
         std::this_thread::sleep_for(
                 std::chrono::milliseconds(500));
     }
