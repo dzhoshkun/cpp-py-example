@@ -1,15 +1,15 @@
-from pymycpp import Cimage, Cproc
-from inheritance import Pimage
+from pymycpp import Bitmap, Cproc
+from swap import SwappedBitmap
 from time import sleep
 
 
 if __name__ == '__main__':
     proc = Cproc()
-    cimg = Cimage(500, 300)
-    pimg = Pimage(750, 450)
-    proc.run(cimg)
+    img = Bitmap('baboon.bmp')
+    pimg = SwappedBitmap('baboon.bmp')
+    proc.start(img)
     sleep(5)
     proc.stop()
-    proc.run(pimg)
+    proc.start(pimg)
     sleep(5)
     proc.stop()
