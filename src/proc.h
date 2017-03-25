@@ -18,7 +18,7 @@ class Proc
 
     public:
         Proc();
-        ~Proc();
+        virtual ~Proc();
 
     public:
         void start(Bitmap & image);
