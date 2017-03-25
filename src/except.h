@@ -4,7 +4,7 @@
 
 class FileError : public std::exception
 {
-public:
-    FileError();
-    virtual ~FileError() noexcept;
+    public:
+        FileError();
+        virtual ~FileError() noexcept;
 };
