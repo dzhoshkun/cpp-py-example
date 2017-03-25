@@ -11,6 +11,5 @@ class SwappedBitmap(Bitmap):
 
 
 if __name__ == '__main__':
-
     simg = SwappedBitmap('baboon.bmp')
     simg.save()
