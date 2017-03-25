@@ -20,6 +20,7 @@ class BitmapWrapper : public Bitmap
             // nop
         }
 
+
         numpy::ndarray data_as_ndarray() const
         {
             tuple shape, strides;
@@ -37,6 +38,7 @@ class BitmapWrapper : public Bitmap
                                     object());
         }
 
+
         std::string info() const
         {
             ScopedPythonGILLock gil_lock;
@@ -51,7 +53,7 @@ class BitmapWrapper : public Bitmap
 
 void translate_FileError(FileError const & e)
 {
-    PyErr_SetString(PyExc_OSError, "FileError");
+    PyErr_SetString(PyExc_OSError, "FileError translated");
 }
 
 
