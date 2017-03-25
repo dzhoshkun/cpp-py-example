@@ -1,5 +1,5 @@
 from pymycpp import Bitmap, Proc
-from swap import SwappedBitmap
+from over import PyBitmap
 from time import sleep
 
 
@@ -7,7 +7,7 @@ if __name__ == '__main__':
     proc = Proc()
 
     img = Bitmap('baboon.bmp')
-    pimg = SwappedBitmap('baboon.bmp')
+    pimg = PyBitmap('baboon.bmp')
 
     proc.start(img)
     sleep(5)
