@@ -2,7 +2,7 @@
 #include <boost/python/exception_translator.hpp>
 #include <boost/python/numpy.hpp>
 #include "cimage.h"
-#include "cproc.h"
+#include "proc.h"
 #include "gil.h"
 #include "except.h"
 #include "bitmap.h"
@@ -94,10 +94,10 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("info", &CimageWrapper::info)
         ;
 
-    class_<Cproc, boost::noncopyable>(
-            "Cproc", init<>())
-        .def("run", &Cproc::run)
-        .def("stop", &Cproc::stop)
+    class_<Proc, boost::noncopyable>(
+            "Proc", init<>())
+        .def("start", &Proc::start)
+        .def("stop", &Proc::stop)
         ;
 
     class_<BitmapWrapper, boost::noncopyable>(

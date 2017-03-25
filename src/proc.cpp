@@ -1,39 +1,40 @@
 #include <chrono>
-#include "cproc.h"
+#include <iostream>
+#include "proc.h"
 
 
-Cproc::Cproc()
+Proc::Proc()
     : _running(false)
 {
 
 }
 
-Cproc::~Cproc()
+Proc::~Proc()
 {
     stop();
 }
 
-void Cproc::run(Cimage & image)
+void Proc::start(Bitmap & image)
 {
     _running = true;
-    _thread = std::thread(&Cproc::mt_run, this, std::ref(image));
+    _thread = std::thread(&Proc::run, this, std::ref(image));
 }
 
-void Cproc::stop()
+void Proc::stop()
 {
     _running = false;
     if (_thread.joinable())
         _thread.join();
 }
 
-void Cproc::mt_run(Cimage & image)
+void Proc::run(Bitmap & image)
 {
     size_t count = 0;
+
     while (_running)
     {
-        printf("%lu. iteration: ", ++count);
-        fflush(stdout);
-        image.info();
+        std::cout << ++count << ". iteration: "
+                  << image.info() << std::endl;
         std::this_thread::sleep_for(
                 std::chrono::milliseconds(500));
     }

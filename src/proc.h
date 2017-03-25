@@ -1,20 +1,24 @@
 #pragma once
 
+
 #include <thread>
-#include "cimage.h"
+#include "bitmap.h"
 
 
-class Cproc
+class Proc
 {
 protected:
     std::thread _thread;
     bool _running;
+
 public:
-    Cproc();
-    ~Cproc();
+    Proc();
+    ~Proc();
+
 public:
-    void run(Cimage & image);
+    void start(Bitmap & image);
     void stop();
+
 protected:
-    void mt_run(Cimage & image);
+    void run(Bitmap & image);
 };
