@@ -5,6 +5,10 @@
 #include "bitmap.h"
 
 
+void grad(uint8_t * const data,
+          size_t width, size_t height);
+
+
 class Proc
 {
     protected:

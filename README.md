@@ -21,7 +21,23 @@ See towards the end of this file for instructions how to install these.
 1. `make -j`
 1. `export PYTHONPATH="$(pwd):$PYTHONPATH"`
 1. `cd ../cpp-py-example/res`
-1. Run one of the examples, e.g. `python3 ../ex/gil.py`
+
+## Running the examples
+
+Some `*.py` files in the `ex` folder contain main functions.
+These can be run using e.g. `python3 ../ex/gil.py`
+
+## Running the benchmarks
+
+The `mgrad.py` file in the `ex` folder is intended for benchmarking.
+You can benchmark the pure Python function in this file using e.g.:
+```
+python3 -m timeit "from mgrad import grad; import numpy as np; arr = np.zeros((128, 128, 3), dtype='uint8'); grad(arr)"
+```
+To benchmark its C++ implementation, replace `mgrad` with `pymycpp`, i.e:
+```
+python3 -m timeit "from pymycpp import grad; import numpy as np; arr = np.zeros((128, 128, 3), dtype='uint8'); grad(arr)"
+```
 
 # Installing requirements
 
