@@ -6,13 +6,15 @@
 Proc::Proc()
     : _running(false)
 {
-
+    // nop
 }
+
 
 Proc::~Proc()
 {
     stop();
 }
+
 
 void Proc::start(Bitmap & image)
 {
@@ -20,12 +22,14 @@ void Proc::start(Bitmap & image)
     _thread = std::thread(&Proc::run, this, std::ref(image));
 }
 
+
 void Proc::stop()
 {
     _running = false;
     if (_thread.joinable())
         _thread.join();
 }
+
 
 void Proc::run(Bitmap & image)
 {

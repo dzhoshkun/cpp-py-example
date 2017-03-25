@@ -26,6 +26,7 @@ Bitmap::Bitmap(std::string filepath)
     fclose(fptr);
 }
 
+
 Bitmap::~Bitmap()
 {
     save();
@@ -33,20 +34,24 @@ Bitmap::~Bitmap()
         delete [] _data;
 }
 
+
 uint8_t * const Bitmap::get_data() const
 {
     return _data;
 }
+
 
 size_t Bitmap::get_width() const
 {
     return _width;
 }
 
+
 size_t Bitmap::get_height() const
 {
     return _height;
 }
+
 
 std::string Bitmap::save()
 {
@@ -80,6 +85,7 @@ std::string Bitmap::save()
     return filepath_ts;
 }
 
+
 std::string Bitmap::info() const
 {
     char _info[100];
@@ -87,6 +93,7 @@ std::string Bitmap::info() const
             _width, _height, _filepath.c_str());
     return std::string(_info);
 }
+
 
 std::string Bitmap::timestamp(std::string filepath)
 {

@@ -1,6 +1,8 @@
 #pragma once
 
+
 #include <boost/python.hpp>
+
 
 class ScopedPythonGILRelease
 {
@@ -25,10 +27,12 @@ public:
     }
 };
 
+
 class ScopedPythonGILLock
 {
 protected:
     PyGILState_STATE _gil_state;
+
 public:
     inline ScopedPythonGILLock()
     {

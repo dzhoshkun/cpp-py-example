@@ -63,14 +63,12 @@ BOOST_PYTHON_MODULE(pymycpp)
 
     register_exception_translator<FileError>(&translate_FileError);
 
-    class_<Proc, boost::noncopyable>(
-            "Proc", init<>())
+    class_<Proc, boost::noncopyable>( "Proc", init<>() )
         .def("start", &Proc::start)
         .def("stop", &Proc::stop)
         ;
 
-    class_<BitmapWrapper, boost::noncopyable>(
-            "Bitmap", init<std::string>())
+    class_<BitmapWrapper, boost::noncopyable>( "Bitmap", init<std::string>() )
         .def("get_width", &BitmapWrapper::get_width)
         .def("get_height", &BitmapWrapper::get_height)
         .def("save", &BitmapWrapper::save)
