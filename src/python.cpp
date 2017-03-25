@@ -57,25 +57,6 @@ class BitmapWrapper : public Bitmap
             else
                 return Bitmap::info();
         }
-
-
-        static numpy::ndarray get_ndarray(size_t width, size_t height)
-        {
-            uint8_t * _data = Bitmap::get_memory(width, height);
-            tuple shape, strides;
-            numpy::dtype data_type = numpy::dtype::get_builtin<uint8_t>();
-            shape = make_tuple(height,
-                               width,
-                               3);
-            strides = make_tuple(width * 3 * sizeof(uint8_t),
-                                 3 * sizeof(uint8_t),
-                                 sizeof(uint8_t));
-            return numpy::from_data(_data,
-                                    data_type,
-                                    shape,
-                                    strides,
-                                    object());
-        }
 };
 
 
@@ -106,7 +87,5 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("save", &BitmapWrapper::save)
         .def("data", &BitmapWrapper::data_as_ndarray)
         .def("info", &BitmapWrapper::info)
-        .def("get_memory", &BitmapWrapper::get_ndarray)
-        .staticmethod("get_memory")
         ;
 }
