@@ -39,6 +39,8 @@ class BitmapWrapper : public Bitmap
 
         std::string info() const
         {
+            ScopedPythonGILLock gil_lock;
+
             if (override f = this->get_override("info"))
                 return f();
             else
