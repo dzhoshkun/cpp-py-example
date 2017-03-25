@@ -1,6 +1,6 @@
 #include <chrono>
 #include <iostream>
-#include "cproc.h"
+#include "proc.h"
 
 
 Cproc::Cproc()

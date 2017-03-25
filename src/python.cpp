@@ -2,7 +2,7 @@
 #include <boost/python/exception_translator.hpp>
 #include <boost/python/numpy.hpp>
 #include "cimage.h"
-#include "cproc.h"
+#include "proc.h"
 #include "gil.h"
 #include "except.h"
 #include "bitmap.h"
