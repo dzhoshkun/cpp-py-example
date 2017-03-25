@@ -14,6 +14,7 @@ class Proc
     protected:
         std::thread _thread;
         bool _running;
+        static size_t _version;
 
     public:
         Proc();
@@ -22,6 +23,7 @@ class Proc
     public:
         void start(Bitmap & image);
         void stop();
+        static size_t get_version();
 
     protected:
         void run(Bitmap & image);
