@@ -4,20 +4,20 @@
 #include <boost/python.hpp>
 
 
-class ScopedPythonGILRelease
+class ScopedGilRelease
 {
 protected:
     PyThreadState * _thread_state;
 
 public:
-    inline ScopedPythonGILRelease()
+    inline ScopedGilRelease()
         : _thread_state(nullptr)
     {
         if (PyEval_ThreadsInitialized() != 0)
             _thread_state = PyEval_SaveThread();
     }
 
-    inline ~ScopedPythonGILRelease()
+    inline ~ScopedGilRelease()
     {
         if (_thread_state != nullptr)
         {
@@ -28,18 +28,18 @@ public:
 };
 
 
-class ScopedPythonGILLock
+class ScopedGilAcquisition
 {
 protected:
     PyGILState_STATE _gil_state;
 
 public:
-    inline ScopedPythonGILLock()
+    inline ScopedGilAcquisition()
     {
         _gil_state = PyGILState_Ensure();
     }
 
-    inline ~ScopedPythonGILLock()
+    inline ~ScopedGilAcquisition()
     {
         PyGILState_Release(_gil_state);
     }
