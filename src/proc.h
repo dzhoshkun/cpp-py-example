@@ -5,17 +5,20 @@
 #include "bitmap.h"
 
 
-class Cproc
+class Proc
 {
 protected:
     std::thread _thread;
     bool _running;
+
 public:
-    Cproc();
-    ~Cproc();
+    Proc();
+    ~Proc();
+
 public:
     void start(Bitmap & image);
     void stop();
+
 protected:
     void run(Bitmap & image);
 };

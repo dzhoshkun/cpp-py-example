@@ -94,10 +94,10 @@ BOOST_PYTHON_MODULE(pymycpp)
         .def("info", &CimageWrapper::info)
         ;
 
-    class_<Cproc, boost::noncopyable>(
-            "Cproc", init<>())
-        .def("start", &Cproc::start)
-        .def("stop", &Cproc::stop)
+    class_<Proc, boost::noncopyable>(
+            "Proc", init<>())
+        .def("start", &Proc::start)
+        .def("stop", &Proc::stop)
         ;
 
     class_<BitmapWrapper, boost::noncopyable>(

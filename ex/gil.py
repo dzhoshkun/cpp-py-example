@@ -1,10 +1,10 @@
-from pymycpp import Bitmap, Cproc
+from pymycpp import Bitmap, Proc
 from swap import SwappedBitmap
 from time import sleep
 
 
 if __name__ == '__main__':
-    proc = Cproc()
+    proc = Proc()
 
     img = Bitmap('baboon.bmp')
     pimg = SwappedBitmap('baboon.bmp')

@@ -3,31 +3,31 @@
 #include "proc.h"
 
 
-Cproc::Cproc()
+Proc::Proc()
     : _running(false)
 {
 
 }
 
-Cproc::~Cproc()
+Proc::~Proc()
 {
     stop();
 }
 
-void Cproc::start(Bitmap & image)
+void Proc::start(Bitmap & image)
 {
     _running = true;
-    _thread = std::thread(&Cproc::run, this, std::ref(image));
+    _thread = std::thread(&Proc::run, this, std::ref(image));
 }
 
-void Cproc::stop()
+void Proc::stop()
 {
     _running = false;
     if (_thread.joinable())
         _thread.join();
 }
 
-void Cproc::run(Bitmap & image)
+void Proc::run(Bitmap & image)
 {
     size_t count = 0;
 
