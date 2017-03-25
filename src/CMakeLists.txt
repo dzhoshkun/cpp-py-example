@@ -18,8 +18,7 @@ endif()
 list(REMOVE_DUPLICATES CMAKE_CXX_FLAGS)
 
 set(CPP_LIB mycpp)
-add_library(${CPP_LIB} SHARED cimage.h cimage.cpp
-                              bitmap.h bitmap.cpp
+add_library(${CPP_LIB} SHARED bitmap.h bitmap.cpp
                               proc.h proc.cpp
                               except.h except.cpp
                               gil.h)
