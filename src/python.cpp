@@ -79,6 +79,8 @@ BOOST_PYTHON_MODULE(pymycpp)
     class_<Proc, boost::noncopyable>( "Proc", init<>() )
         .def("start", &Proc::start)
         .def("stop", &Proc::stop)
+        .def("get_version", &Proc::get_version)
+        .staticmethod("get_version")
         ;
 
     class_<BitmapWrapper, boost::noncopyable>( "Bitmap", init<std::string>() )
