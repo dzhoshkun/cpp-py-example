@@ -31,6 +31,7 @@ See towards the end of this file for instructions how to install these.
 
 ## Boost.Python 1.63
 
+1. Install Python 3 development libs (see below).
 1. `wget https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.bz2`
 1. `tar xvfj boost_1_63_0.tar.bz2`
 1. `./bootstrap.sh --with-python=$(which python3)`
