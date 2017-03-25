@@ -23,7 +23,6 @@ class Bitmap
         size_t get_height() const;
         std::string save();
         virtual std::string info() const;
-        static uint8_t * const get_memory(size_t width, size_t height);
 
     protected:
         std::string timestamp(std::string filepath);

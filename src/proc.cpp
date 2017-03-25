@@ -3,6 +3,9 @@
 #include "proc.h"
 
 
+size_t Proc::_version = 1703;
+
+
 void grad(uint8_t * const data,
           size_t width, size_t height)
 {
@@ -48,6 +51,12 @@ void Proc::stop()
     _running = false;
     if (_thread.joinable())
         _thread.join();
+}
+
+
+size_t Proc::get_version()
+{
+    return _version;
 }
 
 
