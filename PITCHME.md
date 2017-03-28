@@ -42,3 +42,11 @@
 * A lot of duplicate code!
 * Auto discovery?
 * For NumPy arrays, compare ["old" code](http://stackoverflow.com/q/30388170)
+
+---
+
+# Do it yourself
+
+All source code incl. examples available online: https://github.com/dzhoshkun/cpp-py-example
+
+**Warning:** Some links in this presentation point to isolated source code for conciseness, so please always use the `master` branch when building the whole project
