@@ -55,6 +55,7 @@ python3 -m timeit "from pymycpp import grad; import numpy as np; arr = np.zeros(
 1. Install Python 3 development libs (see below).
 1. `wget https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.bz2`
 1. `tar xvfj boost_1_63_0.tar.bz2`
+1. `cd boost_1_63_0`
 1. `./bootstrap.sh --with-python=$(which python3)`
 1. `./b2 -j 7`
 1. `./b2 -j 7 install`
