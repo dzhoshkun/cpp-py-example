@@ -1,9 +1,4 @@
-#include <chrono>
-#include <iostream>
 #include "proc.h"
-
-
-size_t Proc::_version = 1703;
 
 
 void grad(uint8_t * const data,
@@ -22,53 +17,5 @@ void grad(uint8_t * const data,
             data[pixel_index + 1] = 255;
             data[pixel_index + 2] = static_cast<uint8_t>(j_slice / height * 255);
         }
-    }
-}
-
-
-Proc::Proc()
-    : _running(false)
-{
-    // nop
-}
-
-
-Proc::~Proc()
-{
-    stop();
-}
-
-
-void Proc::start(Bitmap & image)
-{
-    _running = true;
-    _thread = std::thread(&Proc::run, this, std::ref(image));
-}
-
-
-void Proc::stop()
-{
-    _running = false;
-    if (_thread.joinable())
-        _thread.join();
-}
-
-
-size_t Proc::get_version()
-{
-    return _version;
-}
-
-
-void Proc::run(Bitmap & image)
-{
-    size_t count = 0;
-
-    while (_running)
-    {
-        std::cout << ++count << ". iteration: "
-                  << image.info() << std::endl;
-        std::this_thread::sleep_for(
-                std::chrono::milliseconds(500));
     }
 }

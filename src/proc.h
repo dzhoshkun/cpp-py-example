@@ -1,30 +1,7 @@
 #pragma once
-
-
-#include <thread>
-#include "bitmap.h"
+#include <stddef.h>
+#include <cstdint>
 
 
 void grad(uint8_t * const data,
           size_t width, size_t height);
-
-
-class Proc
-{
-    protected:
-        std::thread _thread;
-        bool _running;
-        static size_t _version;
-
-    public:
-        Proc();
-        virtual ~Proc();
-
-    public:
-        void start(Bitmap & image);
-        void stop();
-        static size_t get_version();
-
-    protected:
-        void run(Bitmap & image);
-};
