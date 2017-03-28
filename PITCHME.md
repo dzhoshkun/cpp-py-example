@@ -48,8 +48,8 @@
 
 ---
 
-- ### You want to use multi-threading?
-- ## Then lo! and behold the GIL!!
+#### You want to use multi-threading? <!-- .element: class="fragment" -->
+## Then lo! and behold the GIL!! <!-- .element: class="fragment" -->
 
 ---
 
