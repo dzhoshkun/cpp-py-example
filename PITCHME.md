@@ -2,16 +2,14 @@
 
 ---
 
-# A little benchmarking
+### A little benchmarking
 
-Example: Traversing a NumPy array
-
-| Impl. | Avg. runtime |
+| Traversing a NumPy array | Average runtime |
 | :--- | ---: |
-| [C++](https://github.com/dzhoshkun/cpp-py-example/blob/benchmark-example/src/proc.cpp#L4) | 158 usec |
-| [Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/mgrad.py) | 22,500 usec |
+| using [C++](https://github.com/dzhoshkun/cpp-py-example/blob/benchmark-example/src/proc.cpp#L4) | 158 usec |
+| using [Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/mgrad.py) | 22,500 usec |
 
-(Runtimes measured using `python3 -m timeit "..."` -- see README for details)
+(Runtimes measured using `python3 -m timeit "..."` - see README)
 
 ---
 
