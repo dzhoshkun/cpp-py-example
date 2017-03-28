@@ -1,3 +1,6 @@
+[![GitPitch](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/dzhoshkun/cpp-py-example/master?grs=github&t=black)
+
+
 # Summary
 
 Example project that shows hybrid programming with C++ and Python.
