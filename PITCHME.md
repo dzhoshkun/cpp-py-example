@@ -1,4 +1,4 @@
-# Hybrid Programming with C++ and Python
+## Hybrid Programming with C++ and Python
 
 ---
 
@@ -9,7 +9,9 @@
 | using [C++](https://github.com/dzhoshkun/cpp-py-example/blob/benchmark-example/src/proc.cpp#L4) | | 158 usec |
 | using [Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/mgrad.py) | | 22,500 usec |
 
-Measured using `python3 -m timeit "..."` - see README.
+Measured using `python3 -m timeit "..."`
+
+(see [README](https://github.com/dzhoshkun/cpp-py-example) for details)
 
 ---
 
