@@ -16,7 +16,7 @@
 # Exposing a class
 
 1. [Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h)
-1. [Boost.Python module (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/c4da24309714a6e61da6c9c48af56aec3858ca9c/src/python.cpp#L64)
+1. [Boost.Python module (C++ => Python)](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-classes-directly/src/python.cpp)
 1. [Using Bitmap class in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/class.py)
 
 ---
