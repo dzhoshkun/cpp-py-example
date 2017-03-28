@@ -26,9 +26,9 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ### Exposing classes
 
-1. [Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h)
-1. [Boost.Python module (C++ => Python)](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-classes-directly/src/python.cpp)
-1. [Using Bitmap class in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/class.py)
+1. [Example C++ class: `Bitmap`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h)
+1. [Create a Boost.Python module](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-classes-directly/src/python.cpp)
+1. [Example: using `Bitmap` class in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/class.py)
 
 ---
 
