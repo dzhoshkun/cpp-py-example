@@ -105,6 +105,8 @@ Otherwise, **lo! and behold the segmentation fault!**
 
 ### Do it yourself
 
-All source code incl. examples available online: https://github.com/dzhoshkun/cpp-py-example
+All source code incl. examples are available online:
 
-**Warning:** Some links in this presentation point to isolated source code for conciseness, so please always use the `master` branch when building the whole project
+https://github.com/dzhoshkun/cpp-py-example
+
+**Warning:** For conciseness, some links in this presentation point to isolated source code fragments for conciseness. Please always use the `master` branch when building the project from the above linked source code.
