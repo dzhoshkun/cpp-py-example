@@ -61,6 +61,22 @@
 
 ---
 
+# Multi-threaded application
+
+[`Proc`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.h#L12) class [using `Bitmap` images](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.cpp#L42).
+
+---
+
+# GIL Acquisition / Release mechanism
+
+Before calling [Python code](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gil.py) ...
+
+... [Acquire GIL](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/python.cpp#L53)
+
+When done calling Python code, release GIL.
+
+---
+
 # Exposing static functions
 
 **TODO**
