@@ -41,10 +41,6 @@ BOOST_PYTHON_MODULE(pymycpp)
     numpy::initialize();
 
     class_<BitmapWrapper, boost::noncopyable>( "Bitmap", init<std::string>() )
-        .def("get_width", &BitmapWrapper::get_width)
-        .def("get_height", &BitmapWrapper::get_height)
-        .def("save", &BitmapWrapper::save)
         .def("data", &BitmapWrapper::data_as_ndarray)
-        .def("info", &BitmapWrapper::info)
         ;
 }
