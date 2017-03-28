@@ -59,8 +59,11 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-## Using multiple threads ?
-## Then lo! and behold the GIL !!
+## Multi-threading between C++ and Python
+
+---
+
+![Respect the GIL](https://i.imgflip.com/1m8vq5.jpg)
 
 ---
 
