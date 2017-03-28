@@ -13,11 +13,20 @@
 
 ---
 
-# Exposing a class
+# Exposing classes
 
 1. [Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h)
 1. [Boost.Python module (C++ => Python)](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-classes-directly/src/python.cpp)
 1. [Using Bitmap class in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/class.py)
+
+---
+
+# Exposing extensible classes
+
+1. [`info` method added to Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h#L25)
+1. [Use `boost::python::wrapper`](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-extensible-classes/src/python.cpp#L9)
+1. [Query for function overrides](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-extensible-classes/src/python.cpp#L20)
+1. [Extending Bitmap class in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/over.py#L11)
 
 ---
 
