@@ -11,6 +11,8 @@ Example: Traversing a NumPy array
 | [C++](https://github.com/dzhoshkun/cpp-py-example/blob/benchmark-example/src/proc.cpp#L4) | 158 usec |
 | [Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/mgrad.py) | 22,500 usec |
 
+(Runtimes measured using `python3 -m timeit "..."` -- see README for details)
+
 ---
 
 # Resources
