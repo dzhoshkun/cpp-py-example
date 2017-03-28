@@ -79,7 +79,7 @@ When done calling Python code, release GIL.
 
 # Exposing static functions
 
-**TODO**
+Static methods need to be [explicitly indicated in the Boost.Python module](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/python.cpp#L83)
 
 ---
 
