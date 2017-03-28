@@ -1,22 +1,9 @@
 #include <boost/python.hpp>
-#include <boost/python/exception_translator.hpp>
 #include <boost/python/numpy.hpp>
-#include "proc.h"
-#include "gil.h"
-#include "except.h"
 #include "bitmap.h"
 
 
 using namespace boost::python;
-
-
-void grad_ndarray(numpy::ndarray arr)
-{
-    uint8_t * data = reinterpret_cast<uint8_t *>(arr.get_data());
-    size_t width = arr.shape(1);
-    size_t height = arr.shape(0);
-    grad(data, width, height);
-}
 
 
 class BitmapWrapper : public Bitmap
@@ -46,42 +33,12 @@ class BitmapWrapper : public Bitmap
                                     strides,
                                     object());
         }
-
-
-        std::string info() const
-        {
-            ScopedGilAcquisition gil_acquisition;
-
-            if (override f = this->get_override("info"))
-                return f();
-            else
-                return Bitmap::info();
-        }
 };
-
-
-void translate_FileError(FileError const & e)
-{
-    PyErr_SetString(PyExc_OSError, "FileError translated");
-}
 
 
 BOOST_PYTHON_MODULE(pymycpp)
 {
-    PyEval_InitThreads();
-
     numpy::initialize();
-
-    register_exception_translator<FileError>(&translate_FileError);
-
-    def("grad", &grad_ndarray);
-
-    class_<Proc, boost::noncopyable>( "Proc", init<>() )
-        .def("start", &Proc::start)
-        .def("stop", &Proc::stop)
-        .def("get_version", &Proc::get_version)
-        .staticmethod("get_version")
-        ;
 
     class_<BitmapWrapper, boost::noncopyable>( "Bitmap", init<std::string>() )
         .def("get_width", &BitmapWrapper::get_width)
