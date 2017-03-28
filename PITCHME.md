@@ -112,4 +112,4 @@ All source code incl. examples are available online:
 
 https://github.com/dzhoshkun/cpp-py-example
 
-**Warning:** For conciseness, some links in this presentation point to isolated source code fragments for conciseness. Please always use the `master` branch when building the project from the above linked source code.
+**Warning:** For conciseness, some links in this presentation point to isolated source code fragments. Please always use the `master` branch when building the project from the above linked source code.
