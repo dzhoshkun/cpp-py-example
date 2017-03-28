@@ -13,7 +13,7 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-# Resources
+### Resources
 
 * Boost.Python website: http://www.boost.org/libs/python/ (see esp. "Boost.Python NumPy Extension Documentation")
 * StackOverflow
@@ -24,7 +24,7 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-# Exposing classes
+### Exposing classes
 
 1. [Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h)
 1. [Boost.Python module (C++ => Python)](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-classes-directly/src/python.cpp)
@@ -32,7 +32,7 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-# Exposing extensible classes
+### Exposing extensible classes
 
 1. [`info` method added to Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h#L25)
 1. [Use `boost::python::wrapper`](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-extensible-classes/src/python.cpp#L9)
@@ -41,14 +41,14 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-# Mapping exceptions
+### Mapping exceptions
 
 1. [`FileError` (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/except.h)
 1. [`FileError` mapped to Python's `OSError`](https://github.com/dzhoshkun/cpp-py-example/blob/mapping-exceptions/src/python.cpp)
 
 ---
 
-# NumPy datatypes + SciPy routines
+### NumPy datatypes + SciPy routines
 
 * C++ array => NumPy array:
    1. [`numpy::initialize()` your module](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L41)
@@ -72,13 +72,13 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-# Multi-threaded application
+### Multi-threaded application
 
 [`Proc`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.h#L12) class [using `Bitmap` images](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.cpp#L42).
 
 ---
 
-# GIL Acquisition / Release mechanism
+### GIL Acquisition / Release mechanism
 
 Before calling [Python code](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gil.py) ...
 
@@ -88,13 +88,13 @@ When done calling Python code, release GIL.
 
 ---
 
-# Exposing static functions
+### Exposing static functions
 
 Static methods need to be [explicitly indicated in the Boost.Python module](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/python.cpp#L83)
 
 ---
 
-# Discussion
+### Discussion
 
 * A lot of duplicate code!
 * Auto discovery?
@@ -102,7 +102,7 @@ Static methods need to be [explicitly indicated in the Boost.Python module](http
 
 ---
 
-# Do it yourself
+### Do it yourself
 
 All source code incl. examples available online: https://github.com/dzhoshkun/cpp-py-example
 
