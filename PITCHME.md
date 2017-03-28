@@ -37,6 +37,17 @@
 
 ---
 
+# NumPy datatypes + SciPy routines
+
+* C++ array => NumPy array:
+   1. [`numpy::initialize()` your module](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L41)
+   1. [Choose "corresponding" NumPy data type](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L23)
+   1. [Choose NumPy array shape](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L24)
+   1. [Describe strides to be used by NumPy array](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L25)
+* [Owner??](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L34)
+
+---
+
 # Discussion
 
 * A lot of duplicate code!
