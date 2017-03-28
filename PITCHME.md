@@ -34,17 +34,17 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ### Exposing extensible classes
 
-1. [`info` method added to Bitmap class (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h#L25)
+1. [Example: polymorphic `info` function in `Bitmap`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/bitmap.h#L25)
 1. [Use `boost::python::wrapper`](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-extensible-classes/src/python.cpp#L9)
 1. [Query for function overrides](https://github.com/dzhoshkun/cpp-py-example/blob/exposing-extensible-classes/src/python.cpp#L20)
-1. [Extending Bitmap class in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/over.py#L11)
+1. [Example: overriding `info` function in Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/over.py#L11)
 
 ---
 
 ### Mapping exceptions
 
-1. [`FileError` (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/except.h)
-1. [`FileError` mapped to Python's `OSError`](https://github.com/dzhoshkun/cpp-py-example/blob/mapping-exceptions/src/python.cpp)
+1. [Example: `FileError` (C++)](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/except.h)
+1. [Example: `FileError` mapped to Python `OSError`](https://github.com/dzhoshkun/cpp-py-example/blob/mapping-exceptions/src/python.cpp)
 
 ---
 
