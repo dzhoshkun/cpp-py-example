@@ -63,7 +63,7 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-![Respect the GIL](https://i.imgflip.com/1m8vq5.jpg)
+![Respect the GIL](https://imgflip.com/i/1m8xf6)
 
 ---
 
