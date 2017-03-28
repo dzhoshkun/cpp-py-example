@@ -55,8 +55,7 @@ Measured using `python3 -m timeit "..."` - see README.
 1. [Choose NumPy array shape](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L24)
 1. [Describe strides to be used by NumPy array](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L27)
 1. [Owner of created NumPy array (?)](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L34)
-> The function also needs an owner, to keep track of the data array passed. Passing none is dangerous
-(Source: http://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html)
+   * "The function also needs an owner, to keep track of the data array passed. Passing none is dangerous" (source: [Boost.Python docs](http://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html))
 
 ---
 
