@@ -48,6 +48,11 @@
 
 ---
 
+- ### You want to use multi-threading?
+- ## Then lo! and behold the GIL!!
+
+---
+
 # Discussion
 
 * A lot of duplicate code!
