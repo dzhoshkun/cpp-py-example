@@ -1,5 +1,6 @@
 #include <boost/python.hpp>
 #include <boost/python/numpy.hpp>
+#include "proc.h"
 
 
 using namespace boost::python;
@@ -17,6 +18,6 @@ void grad_ndarray(numpy::ndarray arr)
 BOOST_PYTHON_MODULE(pymycpp)
 {
     numpy::initialize();
-    
+
     def("grad", &grad_ndarray);
 }
