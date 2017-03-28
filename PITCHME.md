@@ -81,11 +81,13 @@ Not all Python implementations have GIL!
 
 ### GIL Acquisition / Release mechanism
 
-Before calling [Python code](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gil.py) ...
+Before calling [Python code](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gil.py):
 
-... [Acquire GIL](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/python.cpp#L53)
+[Acquire GIL](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/python.cpp#L53)
 
 When done calling Python code, release GIL.
+
+Otherwise, **lo! and behold the segmentation fault!**
 
 ---
 
