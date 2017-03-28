@@ -15,7 +15,7 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ### Resources
 
-* Boost.Python website: http://www.boost.org/libs/python/ (see esp. "Boost.Python NumPy Extension Documentation")
+* Boost.Python website: http://www.boost.org/libs/python/ (see esp. "Boost.Python NumPy Extension")
 * StackOverflow
 * Google
 * Python website: https://www.python.org
@@ -67,11 +67,9 @@ Measured using `python3 -m timeit "..."` - see README.
 
 ---
 
-> In CPython, the global interpreter lock, or GIL, is a mutex that prevents multiple native threads from executing Python bytecodes at once.
+"In CPython, the global interpreter lock, or GIL, is a mutex that prevents multiple native threads from executing Python bytecodes at once." (source: https://wiki.python.org/moin/GlobalInterpreterLock)
 
-(Source: https://wiki.python.org/moin/GlobalInterpreterLock)
-
-**Not all Python implementations have GIL, but the most widely-used one does!**
+Not all Python implementations have GIL!
 
 ---
 
