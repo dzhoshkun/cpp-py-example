@@ -2,6 +2,17 @@
 
 ---
 
+# A little benchmarking
+
+Example: Traversing a NumPy array
+
+| Impl. | Avg. runtime |
+| :--- | ---: |
+| [C++](https://github.com/dzhoshkun/cpp-py-example/blob/benchmark-example/src/proc.cpp#L4) | 158 usec |
+| [Python](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/mgrad.py) | 22,500 usec |
+
+---
+
 # Resources
 
 * Boost.Python website: http://www.boost.org/libs/python/ (see esp. "Boost.Python NumPy Extension Documentation")
