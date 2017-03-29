@@ -52,7 +52,7 @@ Measured using `python3 -m timeit "..."`
 
 ---
 
-### NumPy datatypes + SciPy routines
+### Exposing C++ data as NumPy arrays
 
 1. [`numpy::initialize()` your module](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L41)
 1. Describe the exposed data:
@@ -61,6 +61,12 @@ Measured using `python3 -m timeit "..."`
    1. [Compute the strides](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L27)
 1. [Owner of created NumPy array (?)](https://github.com/dzhoshkun/cpp-py-example/blob/numpy-data-scipy-routines/src/python.cpp#L34)
    * "The function also needs an owner, to keep track of the data array passed. Passing none is dangerous" (source: [Boost.Python docs](http://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html))
+
+---
+
+### Using SciPy routines
+
+Example: [`ndimage.gaussian_filter`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter) applied [on C++ data](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gauss.py)
 
 ---
 
