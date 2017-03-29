@@ -64,9 +64,10 @@ Measured using `python3 -m timeit "..."`
 
 ---
 
-### Using SciPy routines
+### Using NumPy / SciPy capabilities
 
-Example: [`ndimage.gaussian_filter`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter) applied [on C++ data](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gauss.py)
+* Example 1: [Swapping Blue and Red channels of an image](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/swap.py)
+* Example 2: [Gaussian blurring (SciPy)](https://github.com/dzhoshkun/cpp-py-example/blob/master/ex/gauss.py)
 
 ---
 
