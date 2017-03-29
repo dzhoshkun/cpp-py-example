@@ -17,10 +17,11 @@ Measured using `python3 -m timeit "..."`
 
 ### Resources
 
-* Boost.Python website: http://www.boost.org/libs/python/ (see esp. "Boost.Python NumPy Extension")
+* [Boost.Python website](http://www.boost.org/libs/python/) (see esp. "Boost.Python NumPy Extension")
+   * C++ `struct` (and not `class`) used in examples!
+* [Python website](https://www.python.org)
 * StackOverflow
 * Google
-* Python website: https://www.python.org
 
 **Always use up-to-date docs!**
 
