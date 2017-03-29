@@ -89,7 +89,8 @@ Not all Python implementations have GIL!
 
 ### Multi-threaded application
 
-[`Proc`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.h#L12) class [using `Bitmap` images](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.cpp#L42).
+* Example: [`Proc`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.h#L12) class [using `Bitmap` images](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/proc.cpp#L42)
+* [`PyEval_InitThreads()`](https://github.com/dzhoshkun/cpp-py-example/blob/master/src/python.cpp#L71) your module
 
 ---
 
