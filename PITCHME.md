@@ -62,7 +62,9 @@ Measured using `python3 -m timeit "..."`
 
 ---
 
-## Multi-threading between C++ and Python
+## Multi-threading
+
+#### Think "Global Interpreter Lock" or "GIL"
 
 ---
 
