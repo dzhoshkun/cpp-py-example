@@ -67,6 +67,7 @@ python3 -m timeit "from pymycpp import grad; import numpy as np; arr = np.zeros(
 * **Mac OS X**
    1. Install Python 3 and SciPy (see below)
    1. `brew install boost-python --with-python3`
+   1. You might need to set your `BOOST_ROOT`, e.g. `export BOOST_ROOT=/usr/local/Cellar/boost/1.63.0/include`
 
 ### Python 3
 
