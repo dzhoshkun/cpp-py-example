@@ -51,23 +51,31 @@ python3 -m timeit "from pymycpp import grad; import numpy as np; arr = np.zeros(
 
 ### Cmake
 
-`apt install cmake`
+* **Ubuntu:** `apt install cmake`
+* **Mac OS X:** `brew install cmake` (i.e. using [Homebrew](https://brew.sh))
 
 ### Boost.Python 1.63
 
-1. Install Python 3 development libs (see below).
-1. `wget https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.bz2`
-1. `tar xvfj boost_1_63_0.tar.bz2`
-1. `cd boost_1_63_0`
-1. `./bootstrap.sh --with-python=$(which python3)`
-1. `./b2 -j 7`
-1. `./b2 -j 7 install`
+* **Ubuntu**
+   1. Install Python 3 development libs (see below).
+   1. `wget https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.bz2`
+   1. `tar xvfj boost_1_63_0.tar.bz2`
+   1. `cd boost_1_63_0`
+   1. `./bootstrap.sh --with-python=$(which python3)`
+   1. `./b2 -j 7`
+   1. `./b2 -j 7 install`
+* **Mac OS X**
+   1. Install Python 3 and SciPy (see below)
+   1. `brew install boost-python --with-python3`
 
 ### Python 3
 
-`apt install python3-dev`
+* **Ubuntu:** `apt install python3-dev`
+* **Mac OS X:** `brew install python3`
 
 ### NumPy and SciPy
 
-* `apt install python3-numpy`
-* `apt install python3-scipy`
+* **Ubuntu**
+   1. `apt install python3-numpy`
+   1. `apt install python3-scipy`
+* **Mac OS X:** `brew install scipy --with-python3`
