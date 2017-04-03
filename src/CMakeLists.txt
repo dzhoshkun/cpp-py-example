@@ -45,3 +45,7 @@ target_link_libraries(${PY_LIB} ${PYTHON_LIBRARIES}
                                 ${CPP_LIB})
 # no lib prefix
 set_target_properties(${PY_LIB} PROPERTIES PREFIX "")
+# Python seems to be unable to load modules from *.dylib files
+if(APPLE)
+    set_property(TARGET ${PY_LIB} PROPERTY SUFFIX ".so")
+endif(APPLE)
