@@ -68,8 +68,6 @@ void translate_FileError(FileError const & e)
 
 BOOST_PYTHON_MODULE(pymycpp)
 {
-    PyEval_InitThreads();
-
     numpy::initialize();
 
     register_exception_translator<FileError>(&translate_FileError);
