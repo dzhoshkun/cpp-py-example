@@ -1,0 +1,7 @@
+connect-gift-adelie:
+  script:
+    - pwd
+    - ls -alh
+    - whoami
+  tags:
+    - gift-adelie
