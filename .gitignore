@@ -33,7 +33,7 @@
 
 # Python
 **/*/__pycache__
-*.pyc
+*.py[cod]
 
 # Generated BMP files
 *-*-*-*-*-*.bmp
