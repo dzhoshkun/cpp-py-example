@@ -42,7 +42,7 @@ You can benchmark the pure Python function in this file using e.g.:
 ```
 python3 -m timeit "from mgrad import grad; import numpy as np; arr = np.zeros((128, 128, 3), dtype='uint8'); grad(arr)"
 ```
-To benchmark its C++ implementation, replace `mgrad` with `pymycpp`, i.e:
+To benchmark its C++ implementation, replace `mgrad` with `pymycpp`, i.e.:
 ```
 python3 -m timeit "from pymycpp import grad; import numpy as np; arr = np.zeros((128, 128, 3), dtype='uint8'); grad(arr)"
 ```
